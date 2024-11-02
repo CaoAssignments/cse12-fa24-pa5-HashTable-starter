@@ -219,7 +219,7 @@ You will be required to implement the following methods.
 
 |Method Name|Description|Exceptions to Throw|
 |--- |--- |--- |
-|`public MyHashMap()`|Initialize the hash table with a default initial capacity of 10.||
+|`public MyHashMap()`|Initialize the hash table with a default initial capacity of 5.||
 |`public MyHashMap(int initialCapacity)`|Initialize the hash table with the initial capacity given.|Throw an `IllegalArgumentException` if initialCapacity is 0 or negative.|
 |`public V get(K key)`|Returns the value to which the specified key is mapped, or null if this key is not in the hash map.|Throw a `NullPointerException` if key is null.|
 |`public V put(K key, V value)`|Associates the specified value with the specified key in this map. At the start of this method, before attempting to add this mapping to the hash table, check if the hash table is at or above its maximum load of 80% of its capacity (i.e. if size is at least 80% of the current capacity). If so, expand the capacity to double its current capacity. Return the value previously mapped to this key or null if this key was not previously in the hash map.|Throw a `NullPointerException` if key is null or if value is null.|
@@ -258,7 +258,7 @@ You will be required to implement the following methods.
 
 |Method Name|Description|Exceptions to Throw|
 |--- |--- |--- |
-|`public MyHashSet()`|Initialize the hash map with a default capacity of 10.||
+|`public MyHashSet()`|Initialize the hash map with a default capacity of 5.||
 |`public MyHashSet(int initialCapacity)`|Initialize the hash map with the initial capacity given.|Throw an `IllegalArgumentException` if initialCapacity is 0 or negative.|
 |`public boolean add(E element)`|Adds the specified element to this set if it is not already present. Return `true` if the set did not already contain the specified element or `false` otherwise.|Throw a `NullPointerException` if element is null.|
 |`public boolean remove(E element)`|Removes the specified element from this set if it is present. Return `true` if the set contained the specified element or `false` otherwise.|Throw a `NullPointerException` if element is null.|
