@@ -92,7 +92,7 @@ public class MyHashMap<K,V> {
          * Set the next node in the list
          * @param node the new next node
          */
-        public void setNext(Node node) {
+        public void setNext(Node n) {
             next = n;
         }
 
