@@ -322,7 +322,7 @@ We use an array of type `Node` as the underlying data structure. Assume all hash
 
 After calling the constructor, `size` should be 0. All of the indices of our array should be `null`.
 
-**After calling `put("A", 1)`:
+**After calling `put("A", 1)`:**
 
 ![insert-A](https://github.com/user-attachments/assets/123a81ab-388d-48a3-9896-5dc274893e7c)
 
@@ -342,7 +342,7 @@ After calling the constructor, `size` should be 0. All of the indices of our arr
 
 **After calling `remove("G")`:**
 
-![insert-B](https://github.com/user-attachments/assets/f092b84a-77ff-480a-9708-1b404f75be1f)
+![remove-G](https://github.com/user-attachments/assets/25b9713c-9bff-4362-bddd-54b495662b9b)
 
 `7` should be returned. `size` is 2.
 
