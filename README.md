@@ -202,7 +202,7 @@ You will first complete the methods to implement the `MyHashMap` class in `MyHas
 
 #### Node Inner Class
 
-In the starter code you can see that the `MyHashMap` class uses a nested class (that is, a class inside a class) to represent a node in your hash table. To accomplish this, you can’t declare a `Node` class as public, but you can include it in the same file (and even in the same class) as `MyHashMap`. This is necessary for us to store (key, value) pairs in the hash table. The node class has been implemented for you already.
+In the starter code you can see that the `MyHashMap` class uses a nested class (that is, a class inside a class) to represent a node in your hash table. To accomplish this, you can’t declare a `Node` class as public, but you can include it in the same file (and even in the same class) as `MyHashMap`. This is necessary for us to store (key, value) pairs in the hash table since we will use separate chaining via a linked list (similar to PA3) for collision resolution. Please **do not use sentinel nodes** and keep in mind that this is a **singly** linked list. The node class has been implemented for you already.
 
 #### MyHashMap<K,V>
 
@@ -308,3 +308,58 @@ A full style guide can be found [here](https://github.com/CaoAssignments/style-g
         * The autograder will test your implementation on the public test cases given in `PublicTester.java` and hidden test cases not described in this PA writeup.
 * **Coding Style** [5 points]
     * `MyHashMap.java` and `MyHashSet.java` will be graded on style. `CustomTester.java` will be graded on file, class, method headers and indentation.
+
+
+## Appendix
+
+### **Example of MyHashMap Methods** 
+
+We use an array of type `Node` as the underlying data structure. Assume all hashes are generated from a call to `getHash()`. We use separate chaining with a linked list for collisions (note that this is a singly linked list with no sentinel nodes, which is different from PA3).
+
+**MyHashMap should look like after initialization:**
+
+![initial](https://github.com/user-attachments/assets/2e0f4512-955a-4fda-aea3-4922bdfab6e8)
+
+After calling the constructor, `size` should be 0. All of the indices of our array should be `null`.
+
+**After calling `put("A", 1)`:**
+
+![insert-A](https://github.com/user-attachments/assets/123a81ab-388d-48a3-9896-5dc274893e7c)
+
+`null` should be returned. `size` is 1.
+
+**After calling `put("G", 7)`:**
+
+![insert-G](https://github.com/user-attachments/assets/6a3b320c-f6ef-4cd6-96d8-6d68467df030)
+
+`null` should be returned. `size` is 2.
+
+**After calling `put("B", 2)`:**
+
+![insert-B](https://github.com/user-attachments/assets/16481de6-cca3-4743-8bfd-f5dd2c38a539)
+
+`null` should be returned. `size` is 3.
+
+**After calling `remove("G")`:**
+
+![remove-G](https://github.com/user-attachments/assets/25b9713c-9bff-4362-bddd-54b495662b9b)
+
+`7` should be returned. `size` is 2.
+
+**After calling `put("F", 6)`:**
+
+![insert-F](https://github.com/user-attachments/assets/aee81ff2-4a4a-452d-a0c4-b933d138749d)
+
+`null` should be returned. `size` is 3.
+
+**After calling `put("A", 2)`:**
+
+![replace-A](https://github.com/user-attachments/assets/f2af7694-78a2-48c7-9573-7655797d5ff7)
+
+The value at node A is replaced. `1` should be returned. `size` is 3.
+
+**After manually calling `expandCapacity()`:**
+
+![expand](https://github.com/user-attachments/assets/a5ec0fef-320e-4f4f-8d74-2d5e0f447b1d)
+
+All nodes, including nodes on the same linked list, are re-hashed.
