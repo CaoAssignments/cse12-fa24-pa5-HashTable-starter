@@ -202,7 +202,7 @@ You will first complete the methods to implement the `MyHashMap` class in `MyHas
 
 #### Node Inner Class
 
-In the starter code you can see that the `MyHashMap` class uses a nested class (that is, a class inside a class) to represent a node in your hash table. To accomplish this, you can’t declare a `Node` class as public, but you can include it in the same file (and even in the same class) as `MyHashMap`. This is necessary for us to store (key, value) pairs in the hash table. The node class has been implemented for you already.
+In the starter code you can see that the `MyHashMap` class uses a nested class (that is, a class inside a class) to represent a node in your hash table. To accomplish this, you can’t declare a `Node` class as public, but you can include it in the same file (and even in the same class) as `MyHashMap`. This is necessary for us to store (key, value) pairs in the hash table since we will use separate chaining via a linked list (similar to PA3) for collision resolution. Please use **no sentinel nodes** and keep in mind that this is a **singly** linked list. The node class has been implemented for you already.
 
 #### MyHashMap<K,V>
 
