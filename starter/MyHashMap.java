@@ -58,7 +58,10 @@ public class MyHashMap<K,V> {
 
     public int getHash(K key, int capacity) {
         /* Add your implementation here */
-        return 0; // TODO
+        // TODO: Add checks for invalid inputs
+
+        // Hashing function is given here. DO NOT MODIFY THIS
+        return (key.hashCode() & 0x7fffffff) % capacity;
     }
 
     /**
