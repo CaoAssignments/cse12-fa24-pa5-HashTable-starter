@@ -2,6 +2,7 @@ public class MyHashMap<K,V> {
     private static final int DEFAULT_CAPACITY = 5;
     private static final double LOAD_FACTOR = 0.8;
     private static final int EXPAND_CAPACITY_RATIO = 2;
+    private static final int HASH_CODE_MASK = 0x7fffffff;
 
     Node[] hashTable;
     int size;
@@ -61,7 +62,7 @@ public class MyHashMap<K,V> {
         // TODO: Add checks for invalid inputs
 
         // Hashing function is given here. DO NOT MODIFY THIS
-        return (key.hashCode() & 0x7fffffff) % capacity;
+        return (key.hashCode() & HASH_CODE_MASK) % capacity;
     }
 
     /**
