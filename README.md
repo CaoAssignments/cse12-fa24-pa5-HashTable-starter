@@ -68,7 +68,7 @@ Your task: Implement the missing unit tests in `CustomTester.java` based on the 
    	  <code>testMyHashMapConstructorInvalidCapacity</code>
    	</td>
    	<td>
-        Call <code>get</code> in MyHashMap with an invalid value for the initial capacity.
+        Call <code>MyHashMap</code> constructor with an invalid value for the initial capacity.
    	</td>
    	<td>2</td>
   </tr>
