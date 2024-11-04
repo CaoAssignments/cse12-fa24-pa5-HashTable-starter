@@ -229,7 +229,7 @@ You will be required to implement the following methods.
 |`public void clear()`|Removes all of the mappings from this hash map.||
 |`public boolean isEmpty()`|If the map is empty, return `true`. Otherwise, return `false`.||
 |`public void expandCapacity()`|Double the capacity of the hash table and rehash all (key, value) pairs into the new hash table. This method should only be called when the map is at or above its maximum load.||
-|`public int getHash(K key, int capacity)`|Get the hash value for the given key using the Object class's hashCode() method. Return the hash value computed as the value obtained from hashCode() % capacity.|Throw a `NullPointerException` if key is null. Throw an `IllegalArgumentException` if capacity is 0 or negative.|
+|`public int getHash(K key, int capacity)`|Verify the given key and capacity are valid. Use the given hash function in the starter code to compute hash codes. This hash function uses the Object class's hashCode() method and returns the hash value computed as: (key.hashCode() & 0x7fffffff) % capacity. (This hash function ensures the hash code obtained is between 0 and capacity - 1.)|Throw a `NullPointerException` if key is null. Throw an `IllegalArgumentException` if capacity is 0 or negative.|
 
 
 
